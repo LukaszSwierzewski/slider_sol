@@ -1,0 +1,185 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@keyframes showImage {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1); } }
+
+.slider {
+  background: #fff;
+  padding: 60px 15px; }
+  .slider-title {
+    margin-bottom: 10vh; }
+    .slider-title h1 {
+      margin: 0px;
+      font-size: 30px;
+      text-align: center;
+      color: #000; }
+  .slider-items {
+    flex-basis: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    .slider-items_item {
+      flex-basis: calc(25% - 30px);
+      max-width: calc(25% - 30px);
+      margin-bottom: 30px;
+      position: relative; }
+      .slider-items_item img {
+        width: 100%;
+        display: block; }
+      .slider-items_item:hover .overlay {
+        transform: scale(0.9);
+        opacity: 1; }
+
+.overlay {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+  transform: scale(0.5);
+  opacity: 0;
+  transition: all 0.5s ease; }
+  .overlay h2 {
+    font-size: 24px;
+    color: #fff;
+    margin: 30px 0px;
+    font-weight: 600; }
+  .overlay .fa {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 5px;
+    font-size: 30px;
+    color: #000;
+    background: #fff;
+    cursor: pointer; }
+
+.lightbox.open {
+  display: flex; }
+
+.lightbox {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  cursor: zoom-out;
+  height: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center; }
+  .lightbox-img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 500px;
+    padding: 40px 0px;
+    animation: showImage 0.5s ease;
+    cursor: zoom-in; }
+  .lightbox-content {
+    position: relative; }
+  .lightbox-caption {
+    color: #fff;
+    font-size: 18px;
+    position: absolute;
+    left: 0px;
+    bottom: 15px;
+    width: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: space-between; }
+  .lightbox-close {
+    position: absolute;
+    z-index: 101;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    top: 0;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    cursor: zoom-out;
+    font-size: 25px; }
+  .lightbox-controls div {
+    position: absolute;
+    text-align: center;
+    line-height: 42px;
+    font-size: 35px;
+    font-weight: 400;
+    cursor: pointer;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    margin-top: -20px;
+    border-radius: 50%;
+    background: #ccc; }
+    .lightbox-controls div:hover {
+      background: #fff;
+      transition: all 0.5s ease; }
+  .lightbox-controls div.prev {
+    left: 21%; }
+  .lightbox-controls div.next {
+    right: 21%; }
+
+.scale-up {
+  transform: scale(1.5);
+  transition: all 0.5s ease; }
+
+.scale-down {
+  transform: scale(1);
+  transition: all 0.2s ease-in-out; }
+
+body {
+  margin: 0px; }
+
+* {
+  box-sizing: border-box; }
+
+.container {
+  max-width: 1900px;
+  margin: auto; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap; }
+
+@media only screen and (max-width: 1200px) and (min-width: 768px) {
+  .slider-items_item {
+    flex-basis: calc(33% - 30px);
+    max-width: calc(33% - 30px); }
+  .lightbox-caption {
+    padding: 0px 5px; }
+  .lightbox-content {
+    padding: 0px 5px; } }
+
+@media only screen and (max-width: 768px) {
+  .slider-items_item {
+    flex-basis: calc(50% - 0px);
+    max-width: calc(50% - 10px); }
+  div.prev {
+    left: 5px !important; }
+  div.next {
+    right: 5px !important; }
+  .overlay .fa {
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    font-size: 15px; }
+  .lightbox-caption {
+    padding: 0px 5px; }
+  .lightbox-content {
+    padding: 0px 5px; } }
