@@ -129,9 +129,9 @@
       background: #fff;
       transition: all 0.5s ease; }
   .lightbox-controls div.prev {
-    left: 21%; }
+    left: 20px; }
   .lightbox-controls div.next {
-    right: 21%; }
+    right: 20px; }
 
 .scale-up {
   transform: scale(1.5);
@@ -139,7 +139,7 @@
 
 .scale-down {
   transform: scale(1);
-  transition: all 0.2s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
 
 body {
   margin: 0px; }
